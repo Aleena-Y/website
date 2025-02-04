@@ -1,0 +1,135 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #fff;
+  background-color: #083d3d;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header Styles */
+.header {
+  background-color: #083d3d;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo h1 {
+  font-family: 'Georgia', serif;
+  color: #fff;
+}
+
+/* Content Section */
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px 40px; /* Adjust padding for balanced spacing */
+  background-color: #083d3d;
+}
+
+.text-area {
+  max-width: 50%;
+  margin-top: -20px; /* Move text slightly down */
+}
+
+.text-area h2 {
+  color: #fff;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.text-area p {
+  font-size: 16px;
+  color: #ccc;
+}
+
+/* Image Section */
+.image-section img {
+  width: 100%; /* Set the width to take up its container */
+  max-width: 500px; /* Limit the maximum width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a slight shadow */
+  margin-top: -30px; /* Pull the image closer upwards */
+  transition: transform 0.3s ease-in-out; /* Adds smooth hover effect */
+}
+
+.image-area img:hover {
+  transform: scale(1.05); /* Slight zoom-in effect on hover */
+}
+
+
+/* Text Section (Served Every Day and Description) */
+.text-section {
+  margin-top: 10px; /* Further adjust for better spacing */
+  padding-bottom: 60px;
+  text-align: left;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.text-section h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.text-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Footer Section (Contact) */
+.footer {
+  background-color: #083d3d;
+  color: #fff;
+  padding: 10px 20px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  border-radius: 10px;
+  width: auto;
+  z-index: 10;
+}
+
+.contact-card {
+  background-color: #669966;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  font-size: 14px;
+}
+
+.contact-card h3 {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.contact-item i {
+  font-size: 18px;
+  margin-right: 8px;
+  color: #ffcc00;
+}

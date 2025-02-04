@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Shop</title>
+    <style>
+        body {
+            font-family: "Quicksand", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #154549;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #C4B38D;
+			text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            color: black;
+            padding: 40px 15px; /* Increased padding for a thicker header */
+            display: flex;
+            justify-content: space-between; /* Space out the content */
+            align-items: center;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 30px; /* Increased font size for better visibility */
+            margin: 0;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Hamburger Menu Styling */
+        .hamburger-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            transition: all 0.3s; /* Smooth transition for the whole menu */
+        }
+
+        .hamburger-menu div {
+            width: 30px;
+            height: 3px; /* Thinner lines */
+            background-color: black;
+            border-radius: 2px;
+            outline: 1.5px solid #333; /* Adding outline */
+            transition: background-color 0s, outline-color 0.3s; /* Smooth transition */
+        }
+
+        /* Hover Effect for the whole menu */
+        .hamburger-menu:hover div {
+            background-color: #f39c12; /* Change color of all lines */
+            outline-color: #f39c12; /* Change outline color of all lines */
+        }
+
+        /* Positioning the nav links at the bottom-right of the header */
+        .header nav {
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+        }
+
+        .header nav a {
+            color: black;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            padding: 8px;
+            background-color: #C4B38D;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .header nav a:hover {
+            background-color: #f39c12;
+        }
+
+        /* Shop Container and Item Styles */
+        .shop-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .shop-item {
+            background-color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            border: 2px solid #ddd;
+            border-radius: 7px;
+            width: 300px; /* Decreased the width */
+    margin: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Slightly adjusted shadow */
+    text-align: center;
+    padding: 13px; /* Decreased padding */
+    font-size: 0.9em; /* Smaller font size */
+}
+
+
+        .shop-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .shop-item h3 {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .shop-item p {
+            color: #555;
+            font-size: 1em;
+        }
+
+        .shop-item .price {
+            font-size: 1.5em;
+            color: #f39c12;
+            margin-top: 10px;
+        }
+
+        .shop-item .add-to-cart {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .shop-item .add-to-cart:hover {
+            background-color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <!-- Hamburger Menu -->
+        <div class="hamburger-menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- Title in the center -->
+        <h1>Chef’s Signature Bites 👨‍🍳</h1>
+
+        <!-- Navigation Menu at bottom-right -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">about</a>
+            <a href="menu2.html">Menu</a>
+            <a href="rest.html">Shop</a>
+        </nav>
+    </div>
+
+    <!-- Shop Items -->
+    <div class="shop-container">
+        <div class="shop-item">
+            <img src="data:image/jpeg;base64,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" alt="Double Cheese Burger" style="height:140px;width:190px">
+			<h3>Cheese Burger</h3>
+            <p>Our signature Cheese burger with fresh veggies and cheese.</p>
+            <p class="price">Rs.140/-</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        
+        <div class="shop-item">
+            <img src="https://img.pikbest.com/png-images/20240811/tasty-chicken-salad-with-vegetables-on-health-ripe-diet-on-white-background_10716826.png!w700wp" alt="Chicken salad" style="height:140px;width:190px">
+            <h3>Chicken Salad</h3>
+            <p>Grilled chicken with fresh lettuce, cherry tomatoes and tartar sauce.</p>
+            <p class="price">Rs.200/-</p>    
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="shop-item">
+            <img src="https://img.pikbest.com/png-images/20240429/spirited-mothers-day-holiday-wishes-222024-png-images-png_10540099.png!w700wp" alt="Spaghetti" style="height:140px;width:190px">
+            <h3>Spaghetti</h3>
+            <p>Classic pasta with a rich meat sauce and parmesan cheese.</p>
+            <p class="price">Rs.140/-</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="shop-item">
+            <img src="https://img.freepik.com/premium-photo/ice-cream-with-white-background-high-quality-ultra_670382-88894.jpg" alt="Gelato" style="height:140px;width:190px">
+            <h3>Gelato</h3>
+            <p>Gelato is a creamy, dense Italian ice cream inside sweet wafer.</p>
+            <p class="price">Rs.100/-</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="shop-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfHpdYRoEQFaEAJn0-AHTDAyedWMsxiDbi8g&s" alt="Fish And Chips" style="height:140px;width:190px">
+            <h3>Fish And Chips</h3>
+            <p>A British dish of battered fish and fried potato fries with a side of tartar sauce</p>
+            <p class="price">Rs.150/-</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="shop-item">
+            <img src="https://img.freepik.com/premium-psd/lasagna-white-background-v-52-job-id-dce79654344c48439fc17b7285a5ca19_877796-1320.jpg" alt="Pasta" style="height:140px;width:190px">
+            <h3>Lasagna</h3>
+            <p>Layers of pasta, meat, and creamy sauce topped with basil.</p>
+            <p class="price">Rs.250/-</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="shop-item">
+            <img src="https://static.vecteezy.com/system/resources/previews/026/516/621/large_2x/delicious-apple-pie-isolated-on-white-background-free-photo.jpg" alt="Apple Crumble" style="height:140px;width:190px">
+            <h3>Apple Crumble Pie</h3>
+            <p>Sweet apples with a crunchy, buttery topping with cookie crumbs.</p>
+            <p class="price">Rs.350/-</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="shop-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLMNf3P8wLJzMCaUqXdBElo7gCq-q4RxWDoQ&s" alt="Caesar Salad" style="height:140px;width:190px">
+            <h3>Caesar Salad</h3>
+            <p>Crisp romaine with Caesar dressing, croutons & parmesan.</p>
+            <p class="price">Rs.120/-</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="shop-item">
+            <img src="https://img.freepik.com/premium-photo/chicken-alfredo-plate-white-background-generative-ai_918839-1154.jpg" alt="Chicken Alfredo" style="height:140px;width:190px">
+            <h3>Chicken Alfredo</h3>
+            <p>Chicken Alfredo is a pasta dish with chicken, fettuccine and Parmesan sauce.</p>
+            <p class="price">Rs.180/-</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="shop-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUCK6es-LHlBKu8XG2eXQ2Gb4xWs7AwOl49A&s" alt="Pizza" style="height:140px;width:190px">
+            <h3>Margherita Pizza</h3>
+            <p>Pizza topped with fresh mozzarella, basil and tomato sauce.</p>
+            <p class="price">Rs.300/-</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+
+</body>
+</html>
