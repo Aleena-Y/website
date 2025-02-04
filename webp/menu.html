@@ -4,76 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Menu</title>
-    <link rel="stylesheet" href="stylemenu.css">
-    <style>
-        body {
-            background: linear-gradient(120deg, #11a775, #b2f2bb, #56dcab);
-            background-size: 300% 300%;
-            animation: gradientBackground 10s ease infinite;
-        }
-
-        @keyframes gradientBackground {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .bill-box {
-            margin: 2rem auto;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background: #fff;
-            max-width: 800px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .bill-box h3 {
-            text-align: center;
-            color: #333;
-        }
-
-        .bill-box p {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #666;
-        }
-
-        .quantity {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .quantity input {
-            width: 60px;
-            text-align: center;
-        }
-
-        .quantity button {
-            padding: 0.5rem 1rem;
-            background-color: #ff6347;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .quantity button:hover {
-            background-color: #e55342;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <header>
-        <h1>Menu</h1>
+        <h1>Welcome to Our Restaurant</h1>
     </header>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="Rest.html">Shop</a></li>
+            <li><a href="#appetizers">Appetizers</a></li>
+            <li><a href="#main-course">Main Course</a></li>
+            <li><a href="#desserts">Desserts</a></li>
+            <li><a href="#beverages">Beverages</a></li>
         </ul>
     </nav>
     <main>
@@ -83,64 +26,55 @@
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Spring Rolls"> Spring Rolls - $3
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="3">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Garlic Bread"> Garlic Bread - $3.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="3.99">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Mini Tacos"> Mini Tacos - $5.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="5.99">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Hummus Platter"> Hummus Platter - $7.49
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="7.49">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Caprese Skewers"> Caprese Skewers - $6.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="6.99">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Spinach Dip"> Spinach Dip - $6.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="6.99">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Onion Rings"> Onion Rings - $5.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="5.99">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Stuffed Jalapeños"> Stuffed Jalapeños - $7.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="7.99">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Crab Cakes"> Crab Cakes - $10.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="10.99">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
             </ul>
@@ -151,50 +85,43 @@
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Grilled Salmon"> Grilled Salmon - $15.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="15.99">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Spaghetti Carbonara"> Spaghetti Carbonara - $12.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="12.99">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Chicken Parmesan"> Chicken Parmesan - $13.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="13.99">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Beef Steak"> Beef Steak - $18.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="18.99">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Vegetarian Lasagna"> Vegetarian Lasagna - $11.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="11.99">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Lamb Chops"> Lamb Chops - $19.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="19.99">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Butter Chicken"> Butter Chicken - $14.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="14.99">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
             </ul>
@@ -206,43 +133,37 @@
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Cheesecake"> Cheesecake - $6.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="6.99">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Chocolate Lava Cake"> Chocolate Lava Cake - $7.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="7.99">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Ice Cream Sundae"> Ice Cream Sundae - $5.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="5.99">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Apple Pie"> Apple Pie - $6.49
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="6.49">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Tiramisu"> Tiramisu - $7.49
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="7.49">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Creme Brulee"> Creme Brulee - $7.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="7.99">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
             </ul>
@@ -253,97 +174,60 @@
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Coffee"> Coffee - $2.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="2.99">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Fresh Juice"> Fresh Juice - $3.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="3.99">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Soda"> Soda - $1.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="1.99">
-                        <button onclick="addToBill(this)">Add</button>
+ 
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Milkshake"> Milkshake - $4.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="4.99">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Tea"> Tea - $2.49
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="2.49">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Hot Chocolate"> Hot Chocolate - $3.49
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="3.49">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Protein Shake"> Protein Shake - $5.99
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="5.99">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
                 <li>
                     <img src="https://via.placeholder.com/50" alt="Coconut Water"> Coconut Water - $3.49
                     <div class="quantity">
-                        <input type="number" min="0" value="0" data-price="3.49">
-                        <button onclick="addToBill(this)">Add</button>
+
                     </div>
                 </li>
             </ul>
         </section>
         
-        <!-- Add quantity inputs and buttons for other sections in a similar fashion -->
+
     </main>
-    <div class="bill-box">
-        <h3>Your Total Bill</h3>
-        <p id="total-bill">$0.00</p>
-    </div>
+
     <footer>
         <p>&copy; 2024 Our Restaurant. All rights reserved.</p>
     </footer>
 
-    <script>
-        let totalBill = 0;
-    
-        document.querySelectorAll('.quantity input').forEach((input) => {
-            input.addEventListener('input', (e) => {
-                const button = e.target.nextElementSibling;
-                button.disabled = parseInt(e.target.value) <= 0;
-            });
-        });
-    
-        document.querySelectorAll('.quantity button').forEach((button) => {
-            button.addEventListener('click', () => {
-                const quantityInput = button.previousElementSibling;
-                const quantity = parseInt(quantityInput.value) || 0;
-                const price = parseFloat(quantityInput.getAttribute('data-price'));
-    
-                if (quantity > 0) {
-                    totalBill += quantity * price;
-                    document.getElementById('total-bill').textContent = `$${totalBill.toFixed(2)}`;
-                    quantityInput.value = 0; // Reset quantity input
-                    button.disabled = true; // Disable button until valid input
-                }
-            });
-        });
-    </script>
-    
 </body>
 </html>
