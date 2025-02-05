@@ -242,6 +242,45 @@
             <button class="add-to-cart">Add to Cart</button>
         </div>
     </div>
+	<script>
+        // Initialize the cart from local storage if there are any items
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        updateCartCount();
+
+        // Function to update the cart count in the header
+        function updateCartCount() {
+            document.getElementById('cart-count').textContent = cart.length;
+        }
+
+        // Function to add an item to the cart
+        function addToCart(itemName, itemPrice) {
+            // Create a new item object
+            const newItem = { name: itemName, price: itemPrice };
+            
+            // Add the item to the cart
+            cart.push(newItem);
+            
+            // Save the cart to local storage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Update the cart count in the header
+            updateCartCount();
+
+            // Optional: You can show an alert or message to the user
+            alert(itemName + " has been added to your cart!");
+        }
+
+        // Function to view the cart (redirect to a cart page, for example)
+        function viewCart() {
+            // For now, just alert the cart items as a preview
+            if (cart.length > 0) {
+                let cartItems = cart.map(item => item.name + " - $" + item.price).join("\n");
+                alert("Your Cart:\n" + cartItems);
+            } else {
+                alert("Your cart is empty.");
+            }
+        }
+    </script>
 
 </body>
 </html>
